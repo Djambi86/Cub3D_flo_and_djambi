@@ -53,63 +53,39 @@ void	find_player(t_scene *scene)
 		parse_error_free("Error\nNo player start position found\n", scene);
 }
 
-static int	visit_neighbor(t_flood *f, int x, int y)
+static int	cell_open(char c)
 {
-	if (y < 0 || y >= f->map->height || x < 0 || x >= f->map->width)
-		return (1);
-	if (f->map->grid[y][x] == ' ')
-		return (1);
-	if (f->map->grid[y][x] == '1')
-		return (0);
-	if (f->visited[y * f->map->width + x])
-		return (0);
-	f->visited[y * f->map->width + x] = 1;
-	f->stack[(*f->top)++] = x;
-	f->stack[(*f->top)++] = y;
-	return (0);
+	return (c != '1' && c != ' ');
 }
 
-static int	flood_fill(t_flood *f)
+static int	neighbor_leaks(t_map *map, int x, int y)
 {
-	int	x;
-	int	y;
-
-	while (*f->top > 0)
-	{
-		y = f->stack[--(*f->top)];
-		x = f->stack[--(*f->top)];
-		if (visit_neighbor(f, x - 1, y) || visit_neighbor(f, x + 1, y)
-			|| visit_neighbor(f, x, y - 1) || visit_neighbor(f, x, y + 1))
-			return (1);
-	}
+	if (x == 0 || y == 0 || x == map->width - 1 || y == map->height - 1)
+		return (1);
+	if (map->grid[y][x - 1] == ' ' || map->grid[y][x + 1] == ' ')
+		return (1);
+	if (map->grid[y - 1][x] == ' ' || map->grid[y + 1][x] == ' ')
+		return (1);
 	return (0);
 }
 
 void	check_map_closed(t_scene *scene)
 {
-	t_flood	f;
-	int		size;
-	int		top;
-	int		failed;
+	t_map	*map;
+	int		x;
+	int		y;
 
-	f.map = &scene->map;
-	size = f.map->width * f.map->height;
-	f.visited = ft_calloc(size, sizeof(int));
-	f.stack = malloc(sizeof(int) * size * 2);
-	if (!f.visited || !f.stack)
+	map = &scene->map;
+	y = 0;
+	while (y < map->height)
 	{
-		free(f.visited);
-		free(f.stack);
-		parse_error_free("Error\nMemory allocation failed\n", scene);
+		x = 0;
+		while (x < map->width)
+		{
+			if (cell_open(map->grid[y][x]) && neighbor_leaks(map, x, y))
+				parse_error_free("Error\nMap is not closed\n", scene);
+			x++;
+		}
+		y++;
 	}
-	top = 2;
-	f.top = &top;
-	f.stack[0] = (int)f.map->player_x;
-	f.stack[1] = (int)f.map->player_y;
-	f.visited[f.stack[1] * f.map->width + f.stack[0]] = 1;
-	failed = flood_fill(&f);
-	free(f.visited);
-	free(f.stack);
-	if (failed)
-		parse_error_free("Error\nMap is not closed\n", scene);
 }

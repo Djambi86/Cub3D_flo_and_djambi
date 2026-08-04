@@ -31,11 +31,17 @@ int	parse_identifier(char *line)
 
 static int	check_texture_path(char *path)
 {
-	int	fd;
-	int	len;
+	char	*base;
+	int		fd;
+	int		len;
 
-	len = ft_strlen(path);
-	if (len < 5 || ft_strncmp(path + len - 4, ".xpm", 4) != 0)
+	base = ft_strrchr(path, '/');
+	if (base)
+		base++;
+	else
+		base = path;
+	len = ft_strlen(base);
+	if (len < 5 || ft_strncmp(base + len - 4, ".xpm", 4) != 0)
 		return (0);
 	fd = open(path, O_RDONLY);
 	if (fd < 0)

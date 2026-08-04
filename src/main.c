@@ -14,10 +14,16 @@
 
 static void	check_extension(char *arg)
 {
-	int	len;
+	char	*base;
+	int		len;
 
-	len = ft_strlen(arg);
-	if (len < 5 || ft_strncmp(arg + len - 4, ".cub", 4) != 0)
+	base = ft_strrchr(arg, '/');
+	if (base)
+		base++;
+	else
+		base = arg;
+	len = ft_strlen(base);
+	if (len < 5 || ft_strncmp(base + len - 4, ".cub", 4) != 0)
 		parse_error("Error\nArgument must be a .cub file\n");
 }
 

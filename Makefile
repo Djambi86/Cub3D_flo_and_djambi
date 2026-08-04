@@ -29,6 +29,7 @@ SRC		=	src/main.c \
 			src/parser.c \
 			src/parser_elements.c \
 			src/parser_colors.c \
+			src/parser_colors_utils.c \
 			src/parser_map.c \
 			src/parser_map_check.c \
 			src/init.c \

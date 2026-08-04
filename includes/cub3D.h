@@ -134,14 +134,6 @@ typedef struct s_data
 	t_keys		keys;
 }	t_data;
 
-typedef struct s_flood
-{
-	t_map	*map;
-	int		*visited;
-	int		*stack;
-	int		*top;
-}	t_flood;
-
 typedef struct s_col
 {
 	t_data	*data;
@@ -166,6 +158,9 @@ void	store_color(t_scene *scene, int is_floor, char *line);
 
 /* parser_colors.c */
 int		parse_color(char *value);
+
+/* parser_colors_utils.c */
+char	**split_commas(const char *s);
 
 /* parser_map.c */
 void	collect_map(char **lines, int start, t_scene *scene);

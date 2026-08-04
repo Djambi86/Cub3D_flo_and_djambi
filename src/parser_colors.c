@@ -14,21 +14,29 @@
 
 static int	valid_number(char *str)
 {
-	int	len;
+	long	value;
+	int		len;
 
 	if (!str)
 		return (0);
 	while (is_space(*str))
 		str++;
 	len = 0;
+	value = 0;
 	while (ft_isdigit(str[len]))
+	{
+		if (value <= 100000)
+			value = value * 10 + (str[len] - '0');
 		len++;
-	if (len == 0 || len > 3)
+	}
+	if (len == 0)
 		return (0);
 	str += len;
 	while (is_space(*str))
 		str++;
-	return (*str == '\0');
+	if (*str != '\0')
+		return (0);
+	return (value <= 255);
 }
 
 static int	values_valid(char **parts)
@@ -48,7 +56,7 @@ int	parse_color(char *value)
 	int		g;
 	int		b;
 
-	parts = ft_split(value, ',');
+	parts = split_commas(value);
 	if (!values_valid(parts))
 	{
 		free_split(parts);
