@@ -6,7 +6,7 @@
 #    By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/27 01:43:43 by dabdulka          #+#    #+#              #
-#    Updated: 2026/08/04 14:43:11 by dabdulka         ###   ########.fr        #
+#    Updated: 2026/08/04 14:52:27 by dabdulka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,4 +71,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
