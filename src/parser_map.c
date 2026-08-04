@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: flaplanc <flaplanc@students.42vienna.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/27 01:42:00 by dabdulka          #+#    #+#             */
-/*   Updated: 2026/08/04 14:26:55 by dabdulka         ###   ########.fr       */
+/*   Created: 2026/08/04 18:03:54 by flaplanc          #+#    #+#             */
+/*   Updated: 2026/08/04 18:03:54 by flaplanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_colors_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: flaplanc <flaplanc@students.42vienna.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/04 15:00:00 by dabdulka          #+#    #+#             */
-/*   Updated: 2026/08/04 15:00:00 by dabdulka         ###   ########.fr       */
+/*   Created: 2026/08/04 18:03:26 by flaplanc          #+#    #+#             */
+/*   Updated: 2026/08/04 18:03:26 by flaplanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
