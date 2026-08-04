@@ -6,11 +6,11 @@
 /*   By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 01:43:17 by dabdulka          #+#    #+#             */
-/*   Updated: 2026/07/27 01:43:18 by dabdulka         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:26:55 by dabdulka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "../includes/cub3D.h"
 
 void	free_map(t_map *map)
 {

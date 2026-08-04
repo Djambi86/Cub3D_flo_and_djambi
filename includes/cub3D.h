@@ -6,7 +6,7 @@
 /*   By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 01:43:59 by dabdulka          #+#    #+#             */
-/*   Updated: 2026/07/27 01:44:01 by dabdulka         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:24:45 by dabdulka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include "Libft/libft.h"
-# include "mlx.h"
+//# include "mlx.h"
+# include <mlx.h>
 
 # define BUF_SIZE 512
 # define WIN_WIDTH 1024

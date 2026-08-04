@@ -6,11 +6,11 @@
 /*   By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 01:40:59 by dabdulka          #+#    #+#             */
-/*   Updated: 2026/07/27 01:41:03 by dabdulka         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:26:55 by dabdulka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "../includes/cub3D.h"
 
 void	put_pixel(t_img *img, int x, int y, int color)
 {
