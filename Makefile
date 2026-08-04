@@ -6,7 +6,7 @@
 #    By: dabdulka <dabdulka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/27 01:43:43 by dabdulka          #+#    #+#              #
-#    Updated: 2026/08/04 14:52:27 by dabdulka         ###   ########.fr        #
+#    Updated: 2026/08/04 16:55:29 by dabdulka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,10 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT) $(MLX)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX_LIBS) -o $(NAME)
 
-$(LIBFT):
+$(LIBFT): FORCE
 	$(MAKE) -C $(LIBFT_DIR)
+
+FORCE:
 
 
 %.o: %.c $(HEADER)
